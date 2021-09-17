@@ -157,9 +157,15 @@ console.log(lowPopulationAnimals(zooAnimals));
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-function USApop(/*Your Code Here*/) {
-  /*Your Code Here*/
+function USApop(zooArray) {
+  const totalPop = zooArray.map((obj) => {
+    return obj.population;
+  });
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return totalPop.reduce(reducer, 0);
 }
+
+console.log(USApop(zooAnimals));
 
 // 🦁🦁🦁 Callbacks 🦁🦁🦁
 /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -169,7 +175,7 @@ function USApop(/*Your Code Here*/) {
  * The consume function should return the invocation of cb, passing a and b into cb as arguments
  */
 
-function consume(/*Your Code Here */) {
+function consume(a, b, cb) {
   /*Your Code Here */
 }
 
