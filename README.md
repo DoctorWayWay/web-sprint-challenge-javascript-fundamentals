@@ -48,17 +48,17 @@ Edit this document to include your answers after each question. Make sure to lea
 
 - A closure is when an inner function (a function within a function) references information from outside itself to complete its task.
 
-Example:
-const outerVariable = "apple";
-const outerVar = "apple";
-function example() {
---const introduction = "Hi, I am";
---function iAmApple() {
-----return `${introduction} am ${outerVar}.`;
---}
---return iAmApple();
-// iAmApple() is using closure to provide context for "introduction" and "outerVariable". In other words, iAmApple() is reaching into example()'s scope to get context for "introduction" and is reaching into the global scope to get context for "outerVariable", which is what closure is all about.
-}
+Example:  
+const outerVariable = "apple";  
+const outerVar = "apple";  
+function example() {  
+--const introduction = "Hi, I am";  
+--function iAmApple() {  
+----return `${introduction} am ${outerVar}.`;  
+--}  
+--return iAmApple();  
+// iAmApple() is using closure to provide context for "introduction" and "outerVariable". In other words, iAmApple() is reaching into example()'s scope to get context for "introduction" and is reaching into the global scope to get context for "outerVariable", which is what closure is all about.  
+}  
 console.log(example()); // Logs "Hi, I am apple."
 
 - Closures are one way in, no way out. Children can reach into their parents, grand parents, etc., but not vice versa.
@@ -71,14 +71,14 @@ console.log(example()); // Logs "Hi, I am apple."
 
 Example (for Implicit Binding):
 const john = {
---age: 34,
---name: "John",
---introduction: function () {
-----return `Hello! My name is ${this.name} and I am ${this.age} years old.`;
-// The template literal is using implicit binding in the john introduction method because the method is inside the object john. In this case, the function sees the object john as the implied object since it is inside of john.
-}
-};
-const introduceJohn = john.introduction();
+--age: 34,  
+--name: "John",  
+--introduction: function () {  
+----return `Hello! My name is ${this.name} and I am ${this.age} years old.`;  
+// The template literal is using implicit binding in the john introduction method because the method is inside the object john. In this case, the function sees the object john as the implied object since it is inside of john.  
+}  
+};  
+const introduceJohn = john.introduction();  
 console.log(introduceJohn);
 
 -
