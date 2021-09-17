@@ -30,23 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each.
 
-- .map(), .reduce(), and .filter() all loop over the array they are applied to.
+- `.map()`, `.reduce()`, and .`filter()` all loop over the array they are applied to.
 
-- **.map()** can take an array, change the values inside the array, and return a new array with the altered values. .map() does not affect the array it is mapping.
+- **.map()** can take an array, change the values inside the array, and return a new array with the altered values. `.map()` does not affect the array it is mapping.
 
 Example: const numbers = [1, 2, 3] ... numbers.map((num) => num - 1) when returned would give [0, 1, 2] as a new array.
 
-- If I wanted to add 2 to each value inside an array, I would use the .map() method.
+- If I wanted to add 2 to each value inside an array, I would use the `.map()` method.
 
-- **.reduce()** combines all elements within the array it is reducing, turning the array into a single value. Unlike .map() and .filter(), which create a new array when executed, .reduce() makes changes directly to the array it is reducing.
+- **.reduce()** combines all elements within the array it is reducing, turning the array into a single value. Unlike `.map()` and `.filter()`, which create a new array when executed, `.reduce()` makes changes directly to the array it is reducing.
 
 Example:  
 const numbers = [1, 2, 3];  
 numbers.reduce((accumulator, currentValue) => accumulator + currentValue) // when returned would give 6 alone.
 
-- If I want to reduce an array to a single value, I would use the .reduce() method.
+- If I want to reduce an array to a single value, I would use the `.reduce()` method.
 
-- **.filter()** uses a function to filter through an array to. The filtered array is returned as a new array, therefore leaving the array it filtered untouched, just like .map(). Unlike .map() and .reduce(), .filter() cannot alter the values inside the array, as it simply pulls the values from the array being filtered and pushes them to a new array that this method automatically creates.
+- **.filter()** uses a function to filter through an array to find items based on the argument you give it. The filtered array is returned as a new array, therefore leaving the array it filtered untouched, just like `.map()`. Unlike `.map()` and `.reduce()`, `.filter()` cannot alter the values inside the array, as it simply pulls the values from the array being filtered and pushes them to a new array that this method automatically creates.
 
 Example: const numbers = [1, 2, 3]  
 numbers.filter((num) => num === 1 || num === 2) when returned would give the new array [1, 2].
@@ -81,11 +81,11 @@ console.log(example()); // Logs "Hi, I am apple."
 
 4. Describe the four principles of the 'this' keyword.
 
-- First is **Global Object Binding**, which is also known as Window Object Binding. This is when "this" is set in the global scope. As a result, "this" would be the whole entire Javascript program, for that is the only context that could be provided to it.
+- First is **Global Object Binding**, which is also known as Window Object Binding. This is when `this` is set in the global scope. As a result, `this` would be the whole entire Javascript program, for that is the only context that could be provided to it.
 
 Example: console.log(this); // would log the Window object (everything that makes up the Javascript program) if you do this in an empty console in Chrome.
 
-- Second is **Implicit Binding**. This is when "this" is used to imply the object it is bound to without explicitly writing out what the object is.
+- Second is **Implicit Binding**. This is when `this` is used to imply the object it is bound to without explicitly writing out what the object is.
 
 Example:  
 const john = {  
@@ -99,7 +99,7 @@ const john = {
 const introduceJohn = john.introduction();  
 console.log(introduceJohn);
 
-- Third is **New Binding**. This is when a constructor function uses "this" to refer to the object it is creating and returning. This principle is similar to implicit binding.
+- Third is **New Binding**. This is when a constructor function uses `this` to refer to the object it is creating and returning. This principle is similar to implicit binding.
 
 Example:  
 function Walker(name) {  
@@ -108,18 +108,18 @@ function Walker(name) {
 --this.walk = function () {  
 ----console.log(`${this.name} is now ${this.movement}.`);  
 --};  
-// In this constructor function, "this" refers to the object that will be created. Since "this" is used for referring to the object, the constructor function can be reused over and over for creating new objects. If "this" wasn't used, the constructor function couldn't work due to lack of adaptability.  
+// In this constructor function, `this` refers to the object that will be created. Since `this` is used for referring to the object, the constructor function can be reused over and over for creating new objects. If `this` wasn't used, the constructor function couldn't work due to lack of adaptability.  
 }  
 const abe = new Walker("Abe");  
 abe.walkToPark(); // would log "Abe is now walking."
 
-- Forth and final is **Explicit Binding**. This is when we use the methods .call() and .apply() to overwrite "this" in the constructed object with an explicit input provided in the .call() or .apply() argument. This removes the adaptability of the created object because "this" is being swapped out with the argument. In other words, the object is explicitly being told what to be.
+- Forth and final is **Explicit Binding**. This is when we use the methods `.call()` and `.apply()` to overwrite `this` in the constructed object with an explicit input provided in the `.call()` or `.apply()` argument. This removes the adaptability of the created object because `this` is being swapped out with the argument. In other words, the object is explicitly being told what to be.
 
 Example:  
-**// continuing off the example for new binding!**  
+**// continuing off the example for new binding!**
 const bob = new Walker("Bob"); // created new bob object with the Walker construction function.  
 abe.walk.apply(**bob**); // would log "Bob is walking."  
-// Even though we are invoking the walk method on object "abe", the method .apply() (we could also use .call() which would produce the same result) explicitly tells all the "this" keywords in "abe" to refer to the object "bob".
+// Even though we are invoking the walk method on object "abe", the method `.apply()` (we could also use .call() which would produce the same result) explicitly tells all the `this` keywords in "abe" to refer to the object "bob".
 
 5. Why do we need super() in an extended class?
 
