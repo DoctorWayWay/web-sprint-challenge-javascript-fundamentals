@@ -18,7 +18,7 @@ myFunction();
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀:
 
 /* 
-The variable "internal" was declared inside myFunction(), so "internal" is in myFunction()'s function scope. Unlike the variable "external" that has global scope(due to it being outside the function), which means it can be accessed from anywhere, "internal" can only be accessed from within the function myFunction(). Since nestedFunction() is nested inside myFunction() and references a variable that is not within itself (variable "internal"), it uses closure to access its parent function's scope to find what it is looking for (in this case "internal"). Since it found "internal" in myFunction(), it doesn't have to search beyond myFunction()'s function scope in the global scope, which it could've.
+The variable "internal" was declared inside myFunction(), so "internal" is in myFunction()'s function scope. Unlike the variable "external" that has global scope(due to it being outside the function), which means it can be accessed from anywhere, "internal" can only be accessed from within the function myFunction(). Since nestedFunction() is nested inside myFunction() and references a variable that is not within itself (variable "internal"), it uses closure to access its parent function's scope to find what it is looking for (in this case "internal"). Since it found "internal" in myFunction(), it doesn't have to search beyond myFunction()'s function scope in the global scope, but it could've done so.
 */
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
@@ -28,9 +28,14 @@ The variable "internal" was declared inside myFunction(), so "internal" is in my
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
+function summation(number) {
+  let sum = 0;
+  for (let i = 0; i <= number; i++) {
+    sum += i;
+  }
+  return sum;
 }
+console.log(summation(6)); // should equal 21
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -104,9 +109,16 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-function animalNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function animalNames(zooArray) {
+  const displayNames = [];
+  zooArray.forEach((obj) => {
+    displayNames.push(
+      `name: ${obj.animal_name}, scientific: ${obj.scientific_name}`
+    );
+  });
+  return displayNames;
 }
+console.log(animalNames(zooAnimals)); // should log array with correct strings
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -114,9 +126,15 @@ function animalNames(/*Your Code Here*/) {
   For example: ['jackal, asiatic', .....]
   */
 
-function lowerCaseNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lowerCaseNames(zooArray) {
+  const newZooArray = zooArray.map((obj) => obj.animal_name);
+  for (let i = 0; i < newZooArray.length; i++) {
+    newZooArray[i] = newZooArray[i].toLowerCase();
+  }
+  return newZooArray;
 }
+
+console.log(lowerCaseNames(zooAnimals));
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 

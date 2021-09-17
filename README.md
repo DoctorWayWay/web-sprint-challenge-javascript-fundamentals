@@ -26,7 +26,7 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read.
 
-**For clarification on my examples, the dashes are meant to indicate indentation.**
+**For clarification on my examples: The dashes are meant to indicate indentation.**
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each.
 
@@ -116,7 +116,7 @@ abe.walkToPark(); // would log "Abe is now walking."
 - Forth and final is **Explicit Binding**. This is when we use the methods .call() and .apply() to overwrite "this" in the constructed object with an explicit input provided in the .call() or .apply() argument. This removes the adaptability of the created object because "this" is being swapped out with the argument. In other words, the object is explicitly being told what to be.
 
 Example:  
-**// continuing off the example for new binding!**
+**// continuing off the example for new binding!**  
 const bob = new Walker("Bob"); // created new bob object with the Walker construction function.  
 abe.walk.apply(**bob**); // would log "Bob is walking."  
 // Even though we are invoking the walk method on object "abe", the method .apply() (we could also use .call() which would produce the same result) explicitly tells all the "this" keywords in "abe" to refer to the object "bob".
