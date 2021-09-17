@@ -61,11 +61,31 @@ function example() {
 }
 console.log(example()); // Logs "Hi, I am apple."
 
-- Closures are one way in, no way out. Children can reach into their parents, but not vice versa.
+- Closures are one way in, no way out. Children can reach into their parents, grand parents, etc., but not vice versa.
 
 4. Describe the four principles of the 'this' keyword.
 
+- First is Global Object Binding, which is also known as Window Object Binding. This is when "this" is set in the global scope. As a result, "this" would be the whole entire Javascript program, for that is the only context that could be provided to it. Example: console.log(this); // would log the Window object (everything that makes up the Javascript program) if you do this in an empty console in Chrome.
+
+- Second is Implicit Binding. This is when "this" is used to imply the object it is bound to without explicitly writing out what the object is.
+
+Example (for Implicit Binding):
+const john = {
+--age: 34,
+--name: "John",
+--introduction: function () {
+----return `Hello! My name is ${this.name} and I am ${this.age} years old.`;
+// The template literal is using implicit binding in the john introduction method because the method is inside the object john. In this case, the function sees the object john as the implied object since it is inside of john.
+}
+};
+const introduceJohn = john.introduction();
+console.log(introduceJohn);
+
+-
+
 5. Why do we need super() in an extended class?
+
+- The super() keyword allows an extended class's (a sub-class) constructor to use its parent class's constructor properties (also known as keys). In addition, it also gives the extended class access to its parent class's methods.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
