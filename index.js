@@ -18,7 +18,7 @@ myFunction();
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀:
 
 /* 
-The variable "internal" was declared inside myFunction(), so "internal" is in function scope. Unlike the variable "external" that has global scope and can be accessed from anywhere(due to it being outside the function), "internal" can only be accessed from within the function myFunction(). Since nestedFunction() is nested inside myFunction() and references a variable that is not within itself (variable "internal"), it uses closure to access its parent function's scope to find what it is looking for (in this case "internal"). Since it found "internal" in myFunction(), it doesn't have to search beyond myFunction()'s function scope in the global scope, which it could've.
+The variable "internal" was declared inside myFunction(), so "internal" is in myFunction()'s function scope. Unlike the variable "external" that has global scope(due to it being outside the function), which means it can be accessed from anywhere, "internal" can only be accessed from within the function myFunction(). Since nestedFunction() is nested inside myFunction() and references a variable that is not within itself (variable "internal"), it uses closure to access its parent function's scope to find what it is looking for (in this case "internal"). Since it found "internal" in myFunction(), it doesn't have to search beyond myFunction()'s function scope in the global scope, which it could've.
 */
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
