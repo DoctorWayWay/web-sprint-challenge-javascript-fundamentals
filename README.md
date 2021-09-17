@@ -32,7 +32,7 @@ Edit this document to include your answers after each question. Make sure to lea
 
 - `.map()`, `.reduce()`, and .`filter()` all loop over the array they are applied to.
 
-- **.map()** can take an array, change the values inside the array, and return a new array with the altered values. `.map()` does not affect the array it is mapping.
+- **.map()** can take an array, alter the items inside the array, and return a new array with the altered items. `.map()` does not affect the array it is mapping.
 
 Example: const numbers = [1, 2, 3] ... numbers.map((num) => num - 1) when returned would give [0, 1, 2] as a new array.
 
@@ -46,7 +46,7 @@ numbers.reduce((accumulator, currentValue) => accumulator + currentValue) // whe
 
 - If I want to reduce an array to a single value, I would use the `.reduce()` method.
 
-- **.filter()** uses a function to filter through an array to find items based on the argument you give it. The filtered array is returned as a new array, therefore leaving the array it filtered untouched, just like `.map()`. Unlike `.map()` and `.reduce()`, `.filter()` cannot alter the values inside the array, as it simply pulls the values from the array being filtered and pushes them to a new array that this method automatically creates.
+- **.filter()** filters through an array to find items based on the argument you provide. The filtered array is returned as a new array, therefore leaving the array it filtered untouched, just like `.map()`. Unlike `.map()` and `.reduce()`, `.filter()` cannot alter any of the content inside the array, as it simply pulls the items from the array being filtered and pushes them to a new array that this method automatically creates.
 
 Example: const numbers = [1, 2, 3]  
 numbers.filter((num) => num === 1 || num === 2) when returned would give the new array [1, 2].
@@ -113,7 +113,7 @@ function Walker(name) {
 const abe = new Walker("Abe");  
 abe.walkToPark(); // would log "Abe is now walking."
 
-- Forth and final is **Explicit Binding**. This is when we use the methods `.call()` and `.apply()` to overwrite `this` in the constructed object with an explicit input provided in the `.call()` or `.apply()` argument. This removes the adaptability of the created object because `this` is being swapped out with the argument. In other words, the object is explicitly being told what to be.
+- Forth and final is **Explicit Binding**. This is when we use the methods `.call()` and `.apply()` to overwrite `this` in a constructed object with an explicit input provided in the `.call()` or `.apply()` argument. This removes the adaptability of the created object because `this` is being swapped out with the argument. In other words, the object is explicitly being told what to be.
 
 Example:  
 **// continuing off the example for new binding!**
