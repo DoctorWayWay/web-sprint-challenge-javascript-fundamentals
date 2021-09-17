@@ -46,6 +46,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 3. Explain what a closure is.
 
+- A closure is when an inner function (a function within a function) references information from outside itself to complete its task.
+
+Example:
+const outerVariable = "apple";
+const outerVar = "apple";
+function example() {
+--const introduction = "Hi, I am";
+--function iAmApple() {
+----return `${introduction} am ${outerVar}.`;
+--}
+--return iAmApple();
+// iAmApple() is using closure to provide context for "introduction" and "outerVariable". In other words, iAmApple() is reaching into example()'s scope to get context for "introduction" and is reaching into the global scope to get context for "outerVariable", which is what closure is all about.
+}
+console.log(example()); // Logs "Hi, I am apple."
+
+- Closures are one way in, no way out. Children can reach into their parents, but not vice versa.
+
 4. Describe the four principles of the 'this' keyword.
 
 5. Why do we need super() in an extended class?
