@@ -34,48 +34,49 @@ Edit this document to include your answers after each question. Make sure to lea
 
 - **.map()** can take an array, alter the items inside the array, and return a new array with the altered items. `.map()` does not affect the array it is mapping.
 
-Example: const numbers = [1, 2, 3] ... numbers.map((num) => num - 1) when returned would give [0, 1, 2] as a new array.
+Example: `const numbers = [1, 2, 3]` ... `numbers.map((num) => num - 1)` when returned would give `[0, 1, 2]` as a new array.
 
 - If I wanted to add 2 to each value inside an array, I would use the `.map()` method.
 
-- **.reduce()** combines all elements within the array it is reducing, turning the array into a single value. Unlike `.map()` and `.filter()`, which create a new array when executed, `.reduce()` makes changes directly to the array it is reducing.
+- **.reduce()** combines all items within the array it is reducing, turning the array into a single value. Unlike `.map()` and `.filter()`, which create a new array when executed, `.reduce()` makes changes directly to the array it is reducing.
 
 Example:  
-const numbers = [1, 2, 3];  
-numbers.reduce((accumulator, currentValue) => accumulator + currentValue) // when returned would give 6 alone.
+`const numbers = [1, 2, 3];`  
+`numbers.reduce((accumulator, currentValue) => accumulator + currentValue)` // when returned would give 6 alone.
 
 - If I want to reduce an array to a single value, I would use the `.reduce()` method.
 
 - **.filter()** filters through an array to find items based on the argument you provide. The filtered array is returned as a new array, therefore leaving the array it filtered untouched, just like `.map()`. Unlike `.map()` and `.reduce()`, `.filter()` cannot alter any of the content inside the array, as it simply pulls the items from the array being filtered and pushes them to a new array that this method automatically creates.
 
-Example: const numbers = [1, 2, 3]  
-numbers.filter((num) => num === 1 || num === 2) when returned would give the new array [1, 2].
+Example:  
+`const numbers = [1, 2, 3]`  
+`numbers.filter((num) => num === 1 || num === 2)` when returned would give the new array `[1, 2]`.
 
-- If I want to have an array that only contains certain values from a previous array I made, I would use the .filter() method.
+- If I want to have an array that only contains certain items from a different array, I would use the `.filter()` method.
 
 2. Explain the difference between a callback and a higher order function.
 
-- A **higher order function** is a function that takes in a function or returns a function.
+- A **higher order function** is a function that takes in a function and/or returns a function.
 
 - A **callback function** is a function that gets passed into another function as its parameter.
 
-- A callback function goes inside of another function, resulting in a higher order function. Callback and higher order functions must work hand in hand with each other.
+- A callback function goes inside of another function, resulting in a higher order function with a callback function being passed into it. Callback and higher order functions must work hand in hand with each other.
 
 3. Explain what a closure is.
 
-- A **closure** is when an inner function (a function within a function) references information from outside itself to complete its task.
+- A **closure** is when an inner function (a function within a function) references information (like a variable or another function) from outside itself to complete its task.
 
 Example:  
 const outerVar = "apple";  
 function example() {  
 --const introduction = "Hi, I am";  
 --function iAmApple() {  
-----return `${introduction} am ${outerVar}.`;  
+----return `${introduction} am ${outerVar}.;`  
 --}  
 --return iAmApple();  
-// iAmApple() is using closure to provide context for "introduction" and "outerVariable". In other words, iAmApple() is reaching into example()'s scope to get context for "introduction" and is reaching into the global scope to get context for "outerVariable", which is what closure is all about.  
+// iAmApple() is using closure to provide context for `introduction` and "outerVariable". In other words, `iAmApple()` is reaching into `example()`'s scope to get context for `introduction` and is reaching into the global scope to get context for `outerVar`, which is what closure is all about.  
 }  
-console.log(example()); // Logs "Hi, I am apple."
+`console.log(example());` // Logs "Hi, I am apple."
 
 - Closures are one way in, no way out. Children can reach into their parents, grand parents, etc., but not vice versa.
 
@@ -83,7 +84,7 @@ console.log(example()); // Logs "Hi, I am apple."
 
 - First is **Global Object Binding**, which is also known as Window Object Binding. This is when `this` is set in the global scope. As a result, `this` would be the whole entire Javascript program, for that is the only context that could be provided to it.
 
-Example: console.log(this); // would log the Window object (everything that makes up the Javascript program) if you do this in an empty console in Chrome.
+Example: `console.log(this);` // would log the Window object (everything that makes up the Javascript program) if you do this in an empty console in Chrome.
 
 - Second is **Implicit Binding**. This is when `this` is used to imply the object it is bound to without explicitly writing out what the object is.
 
@@ -119,7 +120,7 @@ Example:
 **// continuing off the example for new binding!**
 const bob = new Walker("Bob"); // created new bob object with the Walker construction function.  
 abe.walk.apply(**bob**); // would log "Bob is walking."  
-// Even though we are invoking the walk method on object "abe", the method `.apply()` (we could also use .call() which would produce the same result) explicitly tells all the `this` keywords in "abe" to refer to the object "bob".
+// Even though the walk method on object `abe` is being invoked, the method `.apply()` (we could also use `.call()` which would produce the same result) explicitly tells all the `this` keywords in `abe` to refer to the object `bob`.
 
 5. Why do we need super() in an extended class?
 
